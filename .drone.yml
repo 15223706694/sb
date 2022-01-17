@@ -1,9 +1,11 @@
+---
 kind: pipeline
 type: docker
 name: default
 
 steps:
 - name: greeting
-  image: maven:3-jdk-8
+  image: golang:1.12
   commands:
-  - mvn clear package -DskipTests=true
+  - go build
+  - go test
